@@ -1,0 +1,297 @@
+/* généralité */
+
+*,::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+
+h1, h2{
+    font-family: 'Oxanium', cursive;
+    font-size: 45px;
+    width: 100%;
+    text-align: right;
+}
+
+a:hover{
+    color: blue;
+}
+
+p, a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+}
+
+.left{
+    text-align: left;
+}
+
+h2{
+    font-size: 40px;
+    margin-bottom: 38px;
+    text-decoration: underline;
+}
+
+header, section{
+    width: 100%;
+}
+
+div{
+    margin: 9px 0;
+}
+
+.tel{
+    display: none;
+}
+
+.intermediaire{
+    display: none;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+/* header */
+
+header{
+    width: 100%;
+}
+
+.menu{
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 25px;
+}
+
+nav a{
+    font-size: 30px;
+    padding: 13px 0;
+}
+
+.livre1{
+    background: url("images/version ordi/livre\ 1\ 1.png") no-repeat;
+}
+
+.livre2{
+    background: url("images/version ordi/livre\ 2\ 1.png") no-repeat;
+}
+
+.livre3{
+    background: url("images/version ordi/livre\ 3\ 1.png") no-repeat;
+}
+
+.livre4{
+    background: url("images/version ordi/livre\ 4\ 1.png") no-repeat;
+}
+
+/* séparation */
+
+.séparation{
+    margin: 47px 0;
+    justify-content: center;
+}
+
+/* JV */
+
+.imgp{
+    display: none;
+}
+
+/* footer */
+
+footer{
+    margin-top: 47px;
+    padding: 33px 16px;
+    color: white;
+    background: black;
+}
+
+footer a{
+    color: white;
+}
+
+
+
+
+@media (max-width: 1300px){
+    .menu{
+        display: none;
+    }
+
+    .intermediaire{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header img{
+        width: 100%;
+    }
+
+    .imgord{
+        display: none;
+    }
+
+    .imgp{
+        display: block;
+        width: 50%;
+    }
+
+    #JV{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px){
+
+    /* généralité */
+    .ordi{
+        display: none;
+    }
+
+    .intermediaire{
+        display: none;
+    }
+
+
+    .tel{
+        display: block;
+    }
+
+    .flex{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .haut{
+        flex-direction: row;
+    }
+
+    h1{
+        text-align: left;
+    }
+    
+
+
+    /* menu burger */
+    
+    #navburger a{
+        background: white;
+      }
+    
+       #navburger div{
+        display       : flex;
+        flex-direction: column;
+        position: absolute;
+        margin  : 0;
+        right   : 0;
+        top     : 20%;
+        
+      ;
+        min-width: 50vw;
+        height   : 40vh;
+       }
+    
+       #root {
+        position: relative;
+        overflow-x: hidden;
+    }
+    
+    
+     #navburger {
+    
+      display : block;
+      position: absolute;
+      top     : 0;
+      margin  : 0;
+      width   : 100vw;
+      height  : 100vh;
+    
+      z-index: 99;
+    
+      transform-origin: 0% 0%;
+      transform       : translate(200%, 0);
+    
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    
+     }
+    
+     #navburger.open {
+      transform: none;
+      position : absolute;
+    }
+    
+    #burger span{
+      display      : block;
+            position     : absolute;
+            height       : 4px;
+            width        : 100%;
+            margin-bottom: 5px;
+            background   : #000000;
+            border-radius: 3px;
+            z-index      : 100;
+            left         : 0;
+    
+            transform : rotate(0deg);
+            transition: .25s ease-in-out;
+     }
+    
+    #burger{
+    
+      display    : block;
+      position   : relative;
+      margin     : 0 16px;
+      width      : 33px;
+      height     : 28px;
+      z-index    : 100;
+            user-select: none;
+            cursor     : pointer;
+    }
+    
+    #burger span:nth-child(1) {
+      top             : 0px;
+      transform-origin: left top;
+    }
+    #burger span:nth-child(2) {
+      top             : 12px;
+      transform-origin: left center;
+    }
+    #burger span:nth-child(3) {
+      top             : 24px;
+      transform-origin: left bottom;
+    }
+    
+    #burger.open span:nth-child(1) {
+      width    : 110%;
+      transform: rotate(45deg);
+    }
+    #burger.open span:nth-child(2) {
+      width  : 0%;
+      opacity: 0;
+    }
+    #burger.open span:nth-child(3) {
+      width    : 110%;
+      transform: rotate(-45deg);
+    }
+
+    /* img JV */
+
+    .imgp{
+        display: none;
+    }
+
+    /* footer */
+
+    .footer{
+        flex-direction: row;
+    }
+
+}
