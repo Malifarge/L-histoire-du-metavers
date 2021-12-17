@@ -189,14 +189,9 @@ footer a{
     h2, .left{
         text-align: center;
     }
-    
-    p,h1,h2, .left{
-        padding: 0;
-        margin: 0;
-    }
 
     h1{
-        width: 80%;
+        width: 90%;
     }
 
     /* menu burger */
