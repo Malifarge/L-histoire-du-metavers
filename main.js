@@ -30,3 +30,26 @@ Switchmode.addEventListener('click', () =>{
     body.classList.remove('light')}
 
 })
+
+// sliders livres
+
+const items = document.querySelectorAll('.slider img')
+const nbSlide = items.length;
+let count = 1
+
+function slideSuivante(){
+   
+    items[count].classList.remove('active')    
+
+    if(count > 0){
+        count--
+    }else {
+        count = nbSlide - 1
+    }
+    items[count].classList.add('active')
+    console.log(count);
+
+    setTimeout ("slideSuivante()", 2000)
+}
+
+window.onload = function() {slideSuivante(); textanim()} 
