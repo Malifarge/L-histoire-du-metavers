@@ -164,6 +164,10 @@ footer a{
         display: none;
     }
 
+    img{
+        width: 70%;
+    }
+
     .intermediaire{
         display: none;
     }
