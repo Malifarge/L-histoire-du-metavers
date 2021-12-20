@@ -16,6 +16,8 @@ h1, h2{
 
 a:hover{
     color: blue;
+    font-size: 40px;
+    background: none;
 }
 
 p, a{
