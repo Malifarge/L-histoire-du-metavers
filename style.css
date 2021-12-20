@@ -7,6 +7,44 @@
     line-height: 1.4;
 }
 
+.light{
+    background: white;
+    color: black;
+    transition: 0.5s ease-in-out ;
+  }
+
+  body.light #burger span{
+      background: black;
+  }
+  
+  .dark{
+    background: black;
+    color: white;
+    transition: 0.5s ease-in-out ;
+  }
+
+  body.dark #burger span{
+    background: white;
+}
+  
+  .SM{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  body.dark .SM{
+      color: black;
+      background: white;
+  }
+
 h1, h2{
     font-family: 'Oxanium', cursive;
     font-size: 45px;
@@ -291,14 +329,20 @@ footer a{
     #burger.open span:nth-child(1) {
       width    : 110%;
       transform: rotate(45deg);
+      background: black;
+
     }
     #burger.open span:nth-child(2) {
       width  : 0%;
       opacity: 0;
+      background: black;
+
     }
     #burger.open span:nth-child(3) {
       width    : 110%;
       transform: rotate(-45deg);
+      background: black;
+
     }
 
     /* img JV */
