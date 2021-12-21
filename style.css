@@ -182,6 +182,12 @@ nav a{
     display: none;
 }
 
+/* meta */
+
+#Meta img{
+    width:25%;
+}
+
 /* footer */
 
 footer{
@@ -196,9 +202,14 @@ footer a{
 }
 
 
+/* media */
 
+/* intermédiaire */
 
 @media (max-width: 1300px){
+
+    /* généralité */
+
     .menu{
         display: none;
     }
@@ -208,9 +219,13 @@ footer a{
         justify-content: space-between;
     }
 
+    /* header */
+
     header img{
         width: 100%;
     }
+
+    /* JV */
 
     .imgord{
         display: none;
@@ -221,12 +236,16 @@ footer a{
         width: 50%;
     }
 
-
-
     #JV{
         flex-direction: column;
         align-items: center;
     }
+
+    /* meta */
+
+#Meta img{
+    width:50%;
+}
 }
 
 @media (max-width: 900px){
@@ -386,6 +405,12 @@ footer a{
     .imgp{
         display: none;
     }
+
+    /* meta */
+
+#Meta img{
+    width:50%;
+}
 
     /* footer */
 
