@@ -63,7 +63,7 @@ h1, h2, h3{
     padding-right: 20px;
 }
 h3{
-    font-size: 35px;
+    font-size: 45px;
     text-align: end;
 }
 
@@ -270,6 +270,7 @@ footer a{
 
     h3{
       font-size: 30px;  
+      text-align: left;
     }
 
     /* menu burger */
