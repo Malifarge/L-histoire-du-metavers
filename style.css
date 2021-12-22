@@ -1,6 +1,6 @@
 /* généralité */
 
-*,::after, ::before{
+*,*::after, *::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,9 +13,6 @@
     transition: 0.5s ease-in-out ;
   }
 
-  body.light #burger span{
-      background: black;
-  }
   
   .dark{
     background: black;
@@ -23,20 +20,6 @@
     transition: 0.5s ease-in-out ;
   }
 
-  body.dark #burger span{
-    background: white;
-}
-  body.light header a{
-    background: white;
-    color: black;
-    transition: 0.5s ease-in-out ;
-  }
-
-  body.dark header a{
-      background: black;
-      color: white;
-      transition: 0.5s ease-in-out ;
-  }
 
   .SM{
     width: 70px;
@@ -44,37 +27,35 @@
     border-radius: 50%;
     background: black;
     color: white;
+    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
+    margin-right: 15px;
+    font-family: 'Roboto', sans-serif ;
   }
 
   body.dark .SM{
       color: black;
       background: white;
+      border: 1px solid black;
   }
 
 h1, h2, h3{
     font-family: 'Oxanium', cursive;
-    font-size: 45px;
+    font-size: 40px;
     text-align: right;
     padding-right: 20px;
 }
-h3{
-    font-size: 45px;
-    text-align: end;
+
+body.light a:hover, body.dark a:hover{
+    color: blue;
 }
 
-body.light a:hover{
-    color: blue;
-    font-size: 40px;
-}
-
-body.dark a:hover{
-    color: blue;
-    font-size: 40px;
+body.dark header a:hover, body.light header .menu a:hover{
+    font-size: 25px;
 }
 
 p, a{
@@ -92,9 +73,14 @@ p{
 }
 
 h1{
-    font-size: 70px;
-    text-align: end;
-    text-decoration: underline;
+    margin-top: 80px;
+    font-size: 90px;
+}
+
+h3,h1{
+    color: white;
+    text-align: start;
+    margin-left: 15px;
 }
 
 h2{
@@ -138,21 +124,85 @@ section img{
 width: 50%;
 }
 
+a.underline-hover-effect {
+    text-decoration: none;
+  }
+
+  .underline-hover-effect {
+    display: inline-block;
+    padding-bottom: 1px; /* defines the space between text and underline */
+    position: relative;
+  }
+
+  .underline-hover-effect::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: blue;
+    transition: width 0.25s ease-out;
+  }
+  .underline-hover-effect:hover::before {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+
 /* header */
 
 header{
+    background: url("images/version ordi/Fond\ accueil.png") no-repeat center / cover;
+    border: 1px;
+    min-height: 100vh;
+}
+
+.haut{
+    margin: 0;
+    height: 100%;
+}
+
+.menuacc{
+margin: 0 20px;
+justify-content: space-between;
+gap: 100px;
+}
+
+.TITRES{
+flex-direction: column;
+width: 60%;
+gap: 40px;
+}
+
+.titre{
     width: 100%;
 }
 
+header .menu a{
+    color: white;
+    font-size: 20px;
+}
+
 .menu{
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 25px;
+    align-items: flex-start;
+}
+
+nav.ordi{
+    gap: 30px;
 }
 
 nav a{
-    font-size: 30px;
+    font-size: 15px;
     padding: 13px 0;
+}
+
+#root{
+    display: none;
+}
+
+#navburger, #burger{
+    display: none;
 }
 
 /* séparation */
@@ -208,23 +258,6 @@ footer a{
 
 @media (max-width: 1300px){
 
-    /* généralité */
-
-    .menu{
-        display: none;
-    }
-
-    .intermediaire{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    /* header */
-
-    header img{
-        width: 100%;
-    }
-
     /* JV */
 
     .imgord{
@@ -278,9 +311,7 @@ footer a{
     }
 
     h1{
-        text-align: left;
-        width: 90%;
-        font-size: 40px;
+        font-size: 60px;
     }
 
     h2, .left{
@@ -288,13 +319,41 @@ footer a{
     }
 
     h3{
-      font-size: 30px;  
-      text-align: left;
+      font-size: 40px;  
     }
 
+    h1, h3{
+        width: 90%;
+        text-align: center;
+    }
+    /* header */
+
+    header{
+        min-height: 100vh;
+    }
+
+    .haut{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .menuacc{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .TITRES{
+        width: 100%;
+        text-align: center;
+    }
+
+
     /* menu burger */
-    
-    
+
+        nav a{
+            padding: 5px 10px;
+        }
+
        #navburger div{
         display       : flex;
         flex-direction: column;
@@ -304,7 +363,6 @@ footer a{
         top     : 20%;
         
       ;
-        min-width: 50vw;
         height   : 40vh;
        }
     
@@ -318,11 +376,10 @@ footer a{
     
       display : none;
       position: absolute;
-      top     : 0;
+      top     : 120px;
+      background: white;
       right: 0;
       margin  : 0;
-      width   : 100vw;
-      height  : 100vh;
       z-index: 99;
     
       transform-origin: 0% 0%;
@@ -333,7 +390,7 @@ footer a{
      }
     
      #navburger.open {
-         display: block;
+        display: block;
       transform: none;
       position : absolute;
     }
@@ -344,7 +401,7 @@ footer a{
             height       : 4px;
             width        : 100%;
             margin-bottom: 5px;
-            background   : #000000;
+            background   : #ffffff;
             border-radius: 3px;
             z-index      : 100;
             left         : 0;
@@ -381,7 +438,6 @@ footer a{
     #burger.open span:nth-child(1) {
       width    : 110%;
       transform: rotate(45deg);
-
     }
     #burger.open span:nth-child(2) {
       width  : 0%;
@@ -414,8 +470,8 @@ footer a{
 
     /* footer */
 
-    .footer{
-        flex-direction: row;
+    .footer div{
+        align-items: center;
     }
 
 }
