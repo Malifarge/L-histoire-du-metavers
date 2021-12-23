@@ -7,6 +7,10 @@
     line-height: 1.4;
 }
 
+HTML{
+    scroll-behavior: smooth;
+}
+
 .light{
     background: white;
     color: black;
