@@ -19,7 +19,7 @@ html{
 
   
   .dark{
-    background: black;
+    background: #242121;
     color: white;
     transition: 0.5s ease-in-out ;
   }
